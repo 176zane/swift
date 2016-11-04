@@ -1,9 +1,5 @@
 //: Playground - noun: a place where people can play
 
-import UIKit
-
-var str = "Hello, playground"
-
 var someInts = [Int]()
 print("someInts is of type [Int] with \(someInts.count) items.")
 someInts.append(2)
