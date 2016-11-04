@@ -14,7 +14,7 @@ print(greet(person: "Brian"))
 func greetAgain(person: String) -> String {
     return "Hello again, " + person + "!"
 }
-print(greet(person: "Anna"))
+print(greetAgain(person: "Anna"))
 
 func sayHelloWorld() -> String {
     return "hello, world"
