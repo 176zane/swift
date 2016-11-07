@@ -60,6 +60,75 @@ case let .qrCode(productCode):
     print("QR code :\(productCode)")
 }
 
+//原始值
+//作为关联值的替代选择，枚举成员可以被默认值（称为原始值）预填充，这些原始值的类型必须相同。
+
+enum ASCIIControlCharacter: Character {
+    case tab = "\t"
+    case lineFeed = "\n"
+    case carriageReturn = "\r"
+}
+
+//原始值的隐式赋值
+enum Planet2: Int {
+    case mercury = 1, venus, earth, mars, jupiter, saturn, uranus, neptune
+}
+//当使用字符串作为枚举类型的原始值时，每个枚举成员的隐式原始值为该枚举成员的名称
+enum CompassPoint2: String {
+    case north, south, east, west
+}
+let earthsOrder = Planet2.earth.rawValue
+let sunsetDirection = CompassPoint2.west.rawValue
+
+//使用原始值初始化枚举实例
+//如果在定义枚举类型的时候使用了原始值，那么将会自动获得一个初始化方法，这个方法接收一个叫做rawValue的参数，参数类型即为原始值类型，返回值则是枚举成员或nil
+let possiblePlanet = Planet2(rawValue: 7)
+//possiblePlanet是Planet?类型，或者说“可选的Planet”。
+
+let positionToFind = 11
+if let somePlanet = Planet2(rawValue: positionToFind) {
+    switch somePlanet {
+    case .earth:
+        print("Mostly harmless")
+    default:
+        print("Not a safe place for humans")
+    }
+}else {
+    print("There isn't a planet at position \(positionToFind)")
+}
+
+//递归枚举
+//归枚举（recursive enumeration）是一种枚举类型，它有一个或多个枚举成员使用该枚举类型的实例作为关联值。使用递归枚举时，编译器会插入一个间接层。你可以在枚举成员前加上indirect来表示该成员可递归。
+enum ArithmeticExpression {
+    case number(Int)
+    indirect case addition(ArithmeticExpression, ArithmeticExpression)
+    indirect case multiplication(ArithmeticExpression, ArithmeticExpression)
+}
+indirect enum ArithmeticExpression2 {
+    case number(Int)
+    case addition(ArithmeticExpression2, ArithmeticExpression2)
+    case multiplication(ArithmeticExpression2,ArithmeticExpression2 )
+}
+
+let five = ArithmeticExpression2.number(5)
+let four = ArithmeticExpression2.number(4)
+let sum = ArithmeticExpression2.addition(five, four)
+let product = ArithmeticExpression2.multiplication(sum, ArithmeticExpression2.number(2))
+
+//要操作具有递归性质的数据结构，使用递归函数是一种直截了当的方式
+func evaluate(_ expression: ArithmeticExpression2) -> Int {
+    switch expression {
+    case let .number(value):
+        return value
+    case let .addition(left, right):
+        return evaluate(left) + evaluate(right)
+    case  let .multiplication(left, right):
+        return evaluate(left) * evaluate(right)
+    }
+}
+print(evaluate(product))
+
+
 
 
 
