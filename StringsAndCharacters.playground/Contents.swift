@@ -1,10 +1,16 @@
 //: Playground - noun: a place where people can play
 
-import UIKit
-
 var str = "Hello, playground"
 
 let someString = "Some string literal value"
+let quotation = """
+The White Rabbit put on his spectacles.  "Where shall I begin,
+please your Majesty?" he asked.
+
+"Begin at the beginning," the King said gravely, "and go on
+till you come to the end; then stop."
+"""
+
 var emptyString = ""
 var anotherEmptyString = String()
 if emptyString.isEmpty {
@@ -17,8 +23,8 @@ variableString += " and carriage"
 let constantString = "Highlander"
 //constantString += " and another Highlander"
 
-
-for character in "Dog!🐶".characters {
+//在 Swift 中 String 类型是值类型。如果你创建了一个新的字符串，那么当其进行常量、变量赋值操作，或在函数/方法中传递时，会进行值拷贝。
+for character in "Dog!🐶" {
     print(character)
 }
 let execlamationMark: Character = "!"
@@ -42,7 +48,8 @@ let wiseWords = "\"Imagination is more important than knowledge\" - Einstein"
 let dollarSign = "\u{24}"
 let blackHeart = "\u{2665}"
 let sparkLingHeart = "\u{1f496}"
-
+//每一个 Swift 的 Character 类型代表一个可扩展的字形群。而一个可扩展的字形群构成了人类可读的单个字符，它由一个或多个（当组合时） Unicode 标量的序列组成。
+//通过 count 属性返回的字符数量并不总是与包含相同字符的 NSString 的 length 属性相同。NSString 的 length 属性是利用 UTF-16 表示的十六位代码单元数字，而不是 Unicode 可扩展的字符群集。
 let aAcute: Character = "\u{E9}"
 let combinedEAcute: Character = "\u{65}\u{301}"
 
@@ -53,12 +60,12 @@ let enclosedEAcute: Character = "\u{E9}\u{20DD}"
 let regionalIndicatorForUS: Character = "\u{1F1FA}\u{1F1F8}"
 
 let unusualMenagerie = "Koala 🐨, Snail 🐽, Penguin 🐧, Dromedary 🐫"
-print("unsualMenagerie has \(unusualMenagerie.characters.count) chatacters")
+print("unsualMenagerie has \(unusualMenagerie.count) chatacters")
 
 var word = "cafe"
-print("the number of characters in \(word) is \(word.characters.count)")
+print("the number of characters in \(word) is \(word.count)")
 word += "\u{301}"
-print("the number of characters in \(word) is \(word.characters.count)")
+print("the number of characters in \(word) is \(word.count)")
 
 let greeting = "Guten Tag!"
 greeting[greeting.startIndex]
@@ -68,25 +75,27 @@ let index = greeting.index(greeting.startIndex, offsetBy:7)
 greeting[index]
 
 //greeting[greeting.endIndex]
-for index in greeting.characters.indices {
+for index in greeting.indices {
     print("\(greeting[index]) ",terminator: "")
 }
-
+for index in word.indices {
+    print("\(word[index]) ",terminator: "")
+}
 welcome = "hello"
 welcome.insert("!", at: welcome.endIndex)
-welcome.insert(contentsOf:" there".characters, at: welcome.index(before: welcome.endIndex))
+welcome.insert(contentsOf:" there", at: welcome.index(before: welcome.endIndex))
 welcome.remove(at: welcome.index(before: welcome.endIndex))
 print(welcome)
 let range = welcome.index(welcome.endIndex, offsetBy: -6)..<welcome.endIndex
 welcome.removeSubrange(range)
 print(welcome)
 
-let quotation = "We're a lot alike, you and I."
+//let quotation = "We're a lot alike, you and I."
 let sameQuation = "We're a lot alike, you and I."
 if quotation == sameQuation {
     print("These two strings are considered equal")
 }
-
+//如果两个字符串（或者两个字符）的可扩展的字形群集是标准相等，那就认为它们是相等的。只要可扩展的字形群集有同样的语言意义和外观则认为它们标准相等，即使它们是由不同的 Unicode 标量构成
 let eAcuteQueation = "Voulez-vous un caf\u{E9}?"
 let combinedEcuteQuestion = "Voulez-vous un caf\u{65}\u{301}?"
 if eAcuteQueation == combinedEcuteQuestion {

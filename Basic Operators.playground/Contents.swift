@@ -1,7 +1,7 @@
 //: Playground - noun: a place where people can play
 
-import UIKit
-
+//import UIKit
+//赋值符（=）不再有返回值，这样就消除了手误将判等运算符（==）写成赋值符导致代码错误的缺陷
 var str = "Hello, playground"
 
 let b = 10
