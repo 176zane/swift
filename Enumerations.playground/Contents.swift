@@ -38,6 +38,13 @@ default:
     print("Not a safe place for humans")
 }
 
+enum Beverage: CaseIterable {
+    case coffee, tea, juice
+}
+let numberOfChoices = Beverage.allCases.count
+print("\(numberOfChoices) beverages available")
+// 打印“3 beverages available”
+
 //关联值
 enum Barcode {
     case upc(Int, Int, Int, Int)
@@ -68,6 +75,7 @@ enum ASCIIControlCharacter: Character {
     case lineFeed = "\n"
     case carriageReturn = "\r"
 }
+//原始值和关联值是不同的。原始值是在定义枚举时被预先填充的值，像上述三个 ASCII 码。对于一个特定的枚举成员，它的原始值始终不变。关联值是创建一个基于枚举成员的常量或变量时才设置的值，枚举成员的关联值可以变化
 
 //原始值的隐式赋值
 enum Planet2: Int {

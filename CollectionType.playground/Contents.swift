@@ -1,5 +1,6 @@
 //: Playground - noun: a place where people can play
-
+//Swift 中的数组、集合和字典必须明确其中保存的键和值类型，这样就可以避免插入一个错误数据类型的值。同理，对于获取到的值你也可以放心，其数据类型是确定的。
+//数组使用有序列表存储同一类型的多个值。相同的值可以多次出现在一个数组的不同位置中。
 var someInts = [Int]()
 print("someInts is of type [Int] with \(someInts.count) items.")
 someInts.append(2)
@@ -10,7 +11,7 @@ var anotherThreeDoubles = Array(repeating: 2.5, count: 3)
 
 var sixDoubles = threeDoubles + anotherThreeDoubles
 var shoppingList:[String] = ["Eggs","Milk"]
-var shoppingList2 = ["Eggs","Milk"]
+var testArray = ["Eggs",2] as [Any]
 
 print("The shopping list contains \(shoppingList.count) items.")
 if shoppingList.isEmpty {
@@ -45,7 +46,7 @@ for (index, value) in shoppingList.enumerated() {
     print("Item \(index + 1): \(value)")
 }
 
-
+//集合用来存储相同类型并且没有确定顺序的值。当集合元素顺序不重要时或者希望确保每个元素只出现一次时可以使用集合而不是数组。
 var letters = Set<Character>()
 print("letters is of type Set<Character> with \(letters.count) items")
 letters.insert("a")
@@ -99,7 +100,7 @@ let cityAnimals: Set = ["🐦", "🐭"]
 houseAnimals.isSubset(of: farmAnimals)
 farmAnimals.isSuperset(of: houseAnimals)
 farmAnimals.isDisjoint(with: cityAnimals)
-
+//字典是一种无序的集合，它存储的是键值对之间的关系，其所有键的值需要是相同的类型，所有值的类型也需要相同。每个值（value）都关联唯一的键（key），键作为字典中这个值数据的标识符。和数组中的数据项不同，字典中的数据项并没有具体顺序。
 var namesOfIntegers = [Int: String]()
 namesOfIntegers[16] = "sixteen"
 namesOfIntegers = [:]

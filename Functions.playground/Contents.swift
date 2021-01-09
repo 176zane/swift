@@ -1,9 +1,8 @@
 //: Playground - noun: a place where people can play
 
 import UIKit
-
-var str = "Hello, playground"
-
+//参数也可以既当做传入参数，也当做传出参数，也就是说，一旦函数执行结束，传入的参数值将被修改。
+//在 Swift 中，每个函数都有一个由函数的参数值类型和返回值类型组成的类型。你可以把函数类型当做任何其他普通变量类型一样处理，这样就可以更简单地把函数当做别的函数的参数，也可以从其他函数中返回函数。函数的定义可以写在其他函数定义中，这样可以在嵌套函数范围内实现功能封装
 func greet(person: String) -> String {
     let greeting = "Hello, " + person + "!"
     return greeting
@@ -37,7 +36,7 @@ print(greet(person: "Tim", alreadyGreeted: true))
 
 func printAndCount(string: String) -> Int {
     print(string)
-    return string.characters.count
+    return string.count
 }
 
 func printWithoutCounting(string: String) {
@@ -124,7 +123,7 @@ arithmeticMean(3, 8, 24.32)
 
 //函数参数默认是常量
 //定义一个输入输出参数时，在参数定义前加 inout 关键字。一个输入输出参数有传入函数的值，这个值被函数修改，然后被传出函数，替换原来的值
-//你只能传递变量给输入输出参数
+//你只能传递变量给输入输出参数,你不能传入常量或者字面量，因为这些量是不能被修改的。当传入的参数作为输入输出参数时，需要在参数名前加 & 符，表示这个值可以被函数修改。
 //输入输出参数不能有默认值，而且可变参数不能用 inout 标记
 
 func swapTwoInts(_ a: inout Int, _ b: inout Int) {
