@@ -48,7 +48,7 @@ class Apartment {
 var john: Person2?
 var unit4A: Apartment?
 john = Person2(name: "Beth")
-unit4A = Apartment(unit: "4A")
+unit4A = Apartment(unit: "2A")
 
 john!.apartment = unit4A
 unit4A!.tenant = john
@@ -84,7 +84,7 @@ print("+++")
 var john3: Person3?
 var unit4A3: Apartment3?
 john3 = Person3(name: "Jhon3")
-unit4A3 = Apartment3(unit: "4A")
+unit4A3 = Apartment3(unit: "3A")
 john3?.apartment = unit4A3
 unit4A3?.tenant = john3
 john3 = nil

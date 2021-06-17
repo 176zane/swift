@@ -75,7 +75,7 @@ class Address {
         if buildingName != nil {
             return buildingName
         } else if buildingName != nil && street != nil {
-            return "\(buildingNumber) \(street)"
+            return "\(buildingNumber!) \(street!)"
         } else {
             return nil
         }

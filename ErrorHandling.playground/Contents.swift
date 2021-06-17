@@ -9,8 +9,7 @@ enum VendingMachineError: Error {
     case insufficientFunds(coinsNeeded:Int)
     case outOfStock
 }
-
-// throw VendingMachineError.inSufficientFunds(coinsNeeded: 5)
+// throw VendingMachineError.insufficientFunds(coinsNeeded: 5)
 
 //处理错误
 //Swift 中有4种处理错误的方式。你可以把函数抛出的错误传递给调用此函数的代码、用do-catch语句处理错误、将错误作为可选类型处理、或者断言此错误根本不会发生。

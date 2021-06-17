@@ -1,12 +1,13 @@
 //: Playground - noun: a place where people can play
 
-import UIKit
+//import UIKit
 //参数也可以既当做传入参数，也当做传出参数，也就是说，一旦函数执行结束，传入的参数值将被修改。
 //在 Swift 中，每个函数都有一个由函数的参数值类型和返回值类型组成的类型。你可以把函数类型当做任何其他普通变量类型一样处理，这样就可以更简单地把函数当做别的函数的参数，也可以从其他函数中返回函数。函数的定义可以写在其他函数定义中，这样可以在嵌套函数范围内实现功能封装
 func greet(person: String) -> String {
     let greeting = "Hello, " + person + "!"
     return greeting
 }
+
 print(greet(person: "Anna"))
 print(greet(person: "Brian"))
 
@@ -43,7 +44,7 @@ func printWithoutCounting(string: String) {
     let _ = printAndCount(string: string)
 }
 printAndCount(string: "Hello, world")
-printWithoutCounting(string: "Hello, world")
+printWithoutCounting(string: "Hello, world222")
 
 
 //func minMax(array: [Int]) -> (min: Int, max: Int) {
