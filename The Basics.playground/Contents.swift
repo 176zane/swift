@@ -156,6 +156,9 @@ let forcedString: String = possibleString!
 
 let assumedString: String! = "An implicitly unwrapped optional string."
 let implicitString: String = assumedString//不需要感叹号
+//当你使用一个隐式解析可选值时，Swift 首先会把它当作普通的可选值；如果它不能被当成可选类型使用，Swift 会强制解析可选值。在以上的代码中，可选值 assumedString 在把自己的值赋给 implicitString 之前会被强制解析，原因是 implicitString 本身的类型是非可选类型的 String。在下面的代码中，optionalString 并没有显式的数据类型。那么根据类型推断，它就是一个普通的可选类型。
+let optionalString = assumedString
+// optionalString 的类型是 "String?"，assumedString 也没有被强制解析。
 
 if assumedString != nil {
     print(assumedString!)
