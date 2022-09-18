@@ -16,6 +16,8 @@ var welcomeMessage: String
 welcomeMessage = "Hello"
 var red, green, blue:Double
 
+let a : Int
+a = 9
 let 😈 = "hahh"
 let 哈哈哈 = "hahaha"
 let fd = "tuji"
