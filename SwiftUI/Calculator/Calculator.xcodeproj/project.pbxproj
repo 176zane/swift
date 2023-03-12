@@ -11,6 +11,7 @@
 		2F9A4EEB29B6262500060EC5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9A4EEA29B6262500060EC5 /* ContentView.swift */; };
 		2F9A4EED29B6262800060EC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F9A4EEC29B6262800060EC5 /* Assets.xcassets */; };
 		2F9A4EF029B6262800060EC5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F9A4EEF29B6262800060EC5 /* Preview Assets.xcassets */; };
+		2FF60B0929BDC44400C471A4 /* CalculatorButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF60B0829BDC44400C471A4 /* CalculatorButtonItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		2F9A4EEA29B6262500060EC5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2F9A4EEC29B6262800060EC5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2F9A4EEF29B6262800060EC5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		2FF60B0829BDC44400C471A4 /* CalculatorButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorButtonItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				2F9A4EE829B6262500060EC5 /* CalculatorApp.swift */,
 				2F9A4EEA29B6262500060EC5 /* ContentView.swift */,
+				2FF60B0829BDC44400C471A4 /* CalculatorButtonItem.swift */,
 				2F9A4EEC29B6262800060EC5 /* Assets.xcassets */,
 				2F9A4EEE29B6262800060EC5 /* Preview Content */,
 			);
@@ -139,6 +142,7 @@
 			files = (
 				2F9A4EEB29B6262500060EC5 /* ContentView.swift in Sources */,
 				2F9A4EE929B6262500060EC5 /* CalculatorApp.swift in Sources */,
+				2FF60B0929BDC44400C471A4 /* CalculatorButtonItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
