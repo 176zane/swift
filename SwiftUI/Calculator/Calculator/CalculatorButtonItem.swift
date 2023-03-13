@@ -47,4 +47,11 @@ extension CalculatorButtonItem : Hashable{
         case .command: return "commandBackground"
         }
     }
+    var isCommand: Bool {
+        switch self {
+        case .dot,.digit,.op: return false
+        case .command: return true
+            
+        }
+    }
 }
